@@ -26,12 +26,12 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: Checkout
-      uses: actions/checkout@v4.1.2
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
 
