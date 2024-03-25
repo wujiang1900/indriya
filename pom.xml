@@ -614,6 +614,14 @@
 		</repository>
 	</repositories>
 
+	<!-- Deployment to public servers -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/wujiang1900/indriya</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<profiles>
 		<!-- enable java11 compilation -->
 		<profile>
