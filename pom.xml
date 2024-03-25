@@ -136,7 +136,7 @@
 			</roles>
 		</contributor>
 	</contributors>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
@@ -156,7 +156,7 @@
             <version>1.1.2</version>
             <optional>true</optional>
         </dependency>
-		
+
 		<!-- OSGI support -->
 		<dependency>
 			<groupId>org.osgi</groupId>
@@ -603,32 +603,24 @@
 
 	<!-- Additional repositories -->
 	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>ossrh-snapshot</id>
-            <name>OSSRH Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>       
-    </repositories>
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>ossrh-snapshot</id>
+			<name>OSSRH Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
 
-    <!-- Deployment to public servers -->
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-	<ciManagement>
-		<system>CircleCI</system>
-		<url>https://circleci.com/gh/unitsofmeasurement/indriya</url>
-	</ciManagement>
+	<!-- Deployment to public servers -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/wujiang1900/indriya</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<profiles>
 		<!-- enable java11 compilation -->
@@ -651,8 +643,8 @@
 					</plugin>
 				</plugins>
 			</build>
-		</profile>	
-		
+		</profile>
+
 		<!-- enable java17 compilation -->
 		<profile>
 			<id>compile-java17</id>
